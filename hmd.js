@@ -147,8 +147,8 @@ instruments.definitions.helmetMountedDisplay = {
 
 function centerHMD() {
   instruments.definitions.helmetMountedDisplay.overlay.position = {
-    x: window.innerWidth / 2,
-    y: window.innerHeight / 2
+    x: window.innerWidth,
+    y: window.innerHeight
   };
 }
 
@@ -172,17 +172,7 @@ function checkIT() {
       hmdIsActive = 1;
     }
 
-    if (
-      geofs.camera.definitions["cockpit"].orientations.current[1] >= 15 ||
-      geofs.camera.definitions["cockpit"].orientations.current[1] <= -15
-    ) {
-      geofs.animation.values.hmdShow = 1;
-    } else {
-      geofs.animation.values.hmdShow = 0;
-    }
-  } else {
-    hmdIsActive = 0;
-  }
+    
 }
 
 checkITint = setInterval(function () { checkIT(); }, 1000);
